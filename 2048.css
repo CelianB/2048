@@ -1,0 +1,40 @@
+select {
+   margin: 4px;
+   border: 1px solid #111;
+   padding: 5px 10px 5px 5px;
+   font-size: 16px;
+   border: 1px solid #ccc;
+   height: 34px;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+} 
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+td {
+    border: 2px solid black;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    width: 50px;
+    background-color: #e5fceb;
+}
+.score{
+    display:block;
+    text-align:center;
+    font-size:24px;
+}
+

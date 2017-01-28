@@ -1,0 +1,23 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="2048.js"></script>
+	<link rel="stylesheet" type="text/css" href="2048.css"/>
+    <title>2048</title>
+</head>
+<body onkeydown="KeyPress(event)"onload="OnLoad();">
+    <label>Difficulte :</label>
+    <select id="Select_Level" onchange="OnChangeLevel();">
+        <option>Petit(3x3)</option>
+        <option selected>Normal(4x4)</option>
+        <option>Grand(5x5)</option>
+        <option>Enorme(8x8)</option>
+    </select>
+    <br />
+    <br />
+    <table id="MyTable">
+    </table>
+    <br />
+    <label class="score">Score : <span id="lblScore">4</span> </label>
+	</body>
+	<html>
