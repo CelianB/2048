@@ -32,21 +32,18 @@ function GenerTab(niveau)
     NewCell()
 }
 function getSize(niveau) {
-    if (niveau == 0) {
+    if (niveau == 0) 
         return 3;
-    }
-    if (niveau == 1) {
+    if (niveau == 1) 
         return 4;
-    }
-    if (niveau == 2) {
+    if (niveau == 2) 
         return 5;
-    }
-    if (niveau == 3) {
+    if (niveau == 3) 
         return 8;
-    }
 }
 function RandomCell(SnakeTable) {
-    var val = []; var tab;
+    var val = []; 
+    var tab;
         do {
             val[0] = Math.floor((Math.random() * SnakeTable));
             val[1] = Math.floor((Math.random() * SnakeTable));
@@ -58,21 +55,13 @@ function RandomCell(SnakeTable) {
 function KeyPress(x) {
     var Key = KeyMap(x);
     if (Key == 37)//Gauche
-    {
         MoveLeft();
-    }
     if (Key == 38)//haut
-    {
         MoveTop();
-    }
     if (Key == 39)//Droite
-    {
         MoveRight();
-    }
     if (Key == 40)//Bas
-    {
         MoveBot();
-    }
 }
 function MoveLeft()
 {
@@ -81,15 +70,14 @@ function MoveLeft()
         var tabligne = new Array();
         for (var j = 0; j < TAILLE; j++)//coll
         {
-            if (arr[i][j] != 0) {
+            if (arr[i][j] != 0) 
                 tabligne.push(arr[i][j]);
-            }
         }
-        //Decale tout � gauche
+        //Decale tout à gauche
         while (tabligne.length < TAILLE) {
             tabligne[tabligne.length] = 0;
         }
-        //Met des 0 � droite
+        //Met des 0 à droite
         Adding(tabligne, false);
         //Renvois le truc avec "fusions"
         for (var l = 0; l < tabligne.length; l++) {
@@ -97,7 +85,7 @@ function MoveLeft()
         }
         tabligne = null;
     }
-    Update()
+    Update();
 }
 function MoveTop() {
     for (var i = 0; i < TAILLE; i++)//coll
@@ -105,21 +93,18 @@ function MoveTop() {
         var tabligne = new Array();
         for (var j = 0; j < TAILLE; j++)//ligne
         {
-            if (arr[j][i] != 0) {
+            if (arr[j][i] != 0) 
                 tabligne.push(arr[j][i]);
-            }
         }
-        //Decale tout � gauche
-        while (tabligne.length < TAILLE) {
+        //Decale tout à gauche
+        while (tabligne.length < TAILLE) 
             tabligne[tabligne.length] = 0;
-        }
         Adding(tabligne, false);
-        for (var l = 0; l < tabligne.length; l++) {
+        for (var l = 0; l < tabligne.length; l++) 
             arr[l][i] = tabligne[l];
-        }
         tabligne = null;
     }
-    Update()
+    Update();
 }
 function MoveRight() {
     for (var i = 0; i < TAILLE; i++)//ligne
@@ -127,15 +112,14 @@ function MoveRight() {
         var tabligne = new Array();
         for (var j = 0; j < TAILLE; j++)//coll
         {
-            if (arr[i][j] != 0) {
+            if (arr[i][j] != 0) 
                 tabligne.push(arr[i][j]);
-            }
         }
-        //met des 0 � droite
+        //met des 0 à droite
         while (tabligne.length < TAILLE) {
             tabligne.unshift(0);
         }
-        //Met des 0 � droite
+        //Met des 0 à droite
         Adding(tabligne, true);
         //Renvois le truc avec "fusions"
         for (var l = 0; l < tabligne.length; l++) {
@@ -143,7 +127,7 @@ function MoveRight() {
         }
         tabligne = null;
     }
-    Update()
+    Update();
 }
 function MoveBot() {
     for (var i = 0; i < TAILLE; i++)//coll
@@ -155,7 +139,7 @@ function MoveBot() {
                 tabligne.push(arr[j][i]);
             }
         }
-        //met des 0 � droite
+        //met des 0 à droite
         while (tabligne.length < TAILLE) {
             tabligne.unshift(0);
         }
@@ -165,7 +149,7 @@ function MoveBot() {
         }
         tabligne = null;
     }
-    Update()
+    Update();
 }
 function NewCell() {
     var random = RandomCell(TAILLE); var ligne = random[0]; var col = random[1];
@@ -204,21 +188,13 @@ function KeyMap(x)
 {
     var key = x.which || x.keyCode;
     if (key == 37||key==81)//Gauche
-    {
         return 37;
-    }
     if (key == 38 || key == 90)//haut
-    {
         return 38;
-    }
     if (key == 39 || key == 68)//Droite
-    {
         return 39;
-    }
     if (key == 40 || key == 83)//Bas
-    {
         return 40;
-    }
 }
 
 function Update() {
@@ -232,14 +208,12 @@ function Update() {
     }
     for (var i = 0; i < TAILLE; i++) {
         for (var j = 0; j < TAILLE; j++) {
-            if (arr[i][j] != 0) {
+            if (arr[i][j] != 0) 
                 document.getElementById(i.toString() + "_" + j.toString()).innerHTML = arr[i][j];
-            }
         }
     }
-    if (newcell == true) {
+    if (newcell == true) 
         NewCell();
-    }
     if (newcell==false && remplis==true){
         document.getElementById("SendScore").style.display = 'block';
         document.getElementById("MyTable").innerHTML = "";
@@ -252,15 +226,12 @@ function testNewCell() {
     score = 2;
     for (var i = 0; i < TAILLE; i++) {
             for (var j = 0; j < TAILLE; j++) {
-                if (document.getElementById(i.toString() + "_" + j.toString()).innerHTML != arr[i][j]) {
+                if (document.getElementById(i.toString() + "_" + j.toString()).innerHTML != arr[i][j]) 
                     newcell = true;
-                }
-                if (document.getElementById(i.toString() + "_" + j.toString()).innerHTML == 0) {
+                if (document.getElementById(i.toString() + "_" + j.toString()).innerHTML == 0) 
                     remplis = false;
-                }
-                else {
+                else 
                     score += parseInt(document.getElementById(i.toString() + "_" + j.toString()).innerHTML);
-                }
             }
         }
 }
