@@ -79,7 +79,7 @@ function MoveLeft()
         }
         //Met des 0 à droite
         Adding(tabligne, false);
-        //Renvois le truc avec "fusions"
+        //Renvois le truc ave!c "fusions"
         for (var l = 0; l < tabligne.length; l++) {
             arr[i][l] = tabligne[l];
         }
